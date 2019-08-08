@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     async function fetchPosts() {
-      fetch("http://www.reddit.com/r/hiphopheads/hot.json?count=500")
+      fetch("https://www.reddit.com/r/hiphopheads/hot.json?count=500")
         .then(function (response) {
           return response.json();
         })
