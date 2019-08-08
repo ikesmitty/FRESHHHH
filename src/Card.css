@@ -1,0 +1,9 @@
+.FreshCard {
+    display: block;
+    width: 40%;
+    height: 10%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 35%;
+    margin-bottom: 5%;
+}

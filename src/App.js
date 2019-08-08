@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect} from 'react';
 import './App.css';
+import FreshCard from './Components/FreshCard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [freshPosts, setFreshPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      fetch("http://www.reddit.com/r/hiphopheads/hot.json?count=500")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(hhhJson => {
+          setFreshPosts(hhhJson.data.children);
+        })
+        .catch(error =>
+          console.error('Error Grabbing FRESH Music:', error)
+        );
+    }
+
+    fetchPosts();
+  }, []);
+
+  return ( 
+    <div className = "App" >
+      {freshPosts.map((value, index) => {
+        return <FreshCard key={index} postInfo={value.data}/>
+      })}
     </div>
   );
 }
