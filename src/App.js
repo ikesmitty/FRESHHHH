@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     async function fetchPosts() {
-      fetch("https://www.reddit.com/r/hiphopheads/hot.json?count=500")
+      fetch("https://www.reddit.com/r/hiphopheads/hot.json?limit=100")
         .then(function (response) {
           return response.json();
         })
@@ -23,9 +23,16 @@ function App() {
   }, []);
 
   return ( 
-    <div className = "App" >
+    <div className="App" >
+      <div className="NavBar">
+        <h1>FRESH HipHopHeads Posts</h1>
+      </div>
       {freshPosts.map((value, index) => {
-        return <FreshCard key={index} postInfo={value.data}/>
+        if(value.data.title.substring(1,6) === "FRESH") {
+          return <FreshCard key={index} postInfo={value.data}/>
+        } else {
+          return '';
+        }
       })}
     </div>
   );
