@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import './App.css';
 import FreshCard from './Components/FreshCard';
-import Button from 'react-bootstrap/Button';
+import { Col } from 'react-bootstrap';
 
 function App() {
   const [freshPosts, setFreshPosts] = useState([]);
@@ -41,8 +41,8 @@ function App() {
       </nav>
       <div className="container-fluid">
         <div className="row">
-          <div className="col"></div>
-          <div className="col-7-lg col-12-sm mx-sm-1">
+          <Col></Col>
+          <Col xs="12" md="7">
             {freshPosts.map((value, index) => {
               if(value.data.title.substring(1,6) === "FRESH") {
                 return <FreshCard key={index} postInfo={value.data}/>
@@ -50,8 +50,8 @@ function App() {
                 return '';
               }
             })}
-          </div>
-          <div className="col"></div>
+          </Col>
+          <Col></Col>
         </div>
       </div>
     </div>
