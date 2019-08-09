@@ -26,9 +26,6 @@ function App() {
   return ( 
     <div className="App" >
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
         <ul className="navbar-nav mr-auto ml-3">
             <li className="nav-item active">
               <h2><b>FRESH HipHopHeads Posts</b></h2>
@@ -45,7 +42,7 @@ function App() {
       <div className="container-fluid">
         <div className="row">
           <div className="col"></div>
-          <div className="col-7-lg col-12-sm">
+          <div className="col-7-lg col-12-sm mx-sm-1">
             {freshPosts.map((value, index) => {
               if(value.data.title.substring(1,6) === "FRESH") {
                 return <FreshCard key={index} postInfo={value.data}/>
