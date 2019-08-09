@@ -44,8 +44,8 @@ function App() {
       </nav>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-sm"></div>
-          <div className="col-7">
+          <div className="col"></div>
+          <div className="col-7-lg col-12-sm">
             {freshPosts.map((value, index) => {
               if(value.data.title.substring(1,6) === "FRESH") {
                 return <FreshCard key={index} postInfo={value.data}/>
@@ -54,7 +54,7 @@ function App() {
               }
             })}
           </div>
-          <div className="col-sm"></div>
+          <div className="col"></div>
         </div>
       </div>
     </div>
