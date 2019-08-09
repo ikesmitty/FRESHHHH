@@ -3,13 +3,17 @@ import '../Card.css';
 
 function FreshPostInfo(props) {
     return (
-        <div className="FreshPost">
-            <div className="thumbnail">
-                <img src={props.img} alt="thumbnail img"/>
-            </div>
-            <div className="content">
-                <h1><a href={props.url}>{props.title}</a></h1>
-            </div>
+        <div className="FreshPost col-12">
+            <a href={props.url}>
+                <div className="row">
+                    <div className="thumbnail col-3">
+                        <img className="col-12" src={props.img} alt=""/>
+                    </div>
+                    <div className="content col-8">
+                        <h2>{props.title}</h2>
+                    </div>
+                </div>
+            </a>
         </div>
     );
 }

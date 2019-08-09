@@ -1,8 +1,4 @@
 .FreshCard {
-    display: inline-block;
-    text-align: center;
-    width: 50%;
-    height: 20%;
     border: 1px solid black;
     border-radius: 10px;
     margin-bottom: 2%;
@@ -10,34 +6,34 @@
 }
 
 .FreshPost .thumbnail {
-    float: left;
-    width: 30%;
-    height: 100%;
+    padding: 0 !important;
 }
 
 .FreshPost .thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin: 5%;
-    border-radius: 10px;
+    padding: 0 !important;
+    height: 225px;
+    width: 225px;
+    float: left;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .FreshPost .content {
-    float: right;
-    width: 65%;
-    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.FreshPost .content h1 {
-    height: 100%;
-    vertical-align: middle;
+.FreshPost .content h2{
+    padding: 0;
+    margin: 0;
+    float: left;
 }
 
-.FreshPost .content h1 a {
+
+.FreshPost a {
     text-decoration: none;
     color: black;
 }
 
-.FreshPost .content h1 a:hover {
+.FreshPost a:hover {
     color: grey;
 }
